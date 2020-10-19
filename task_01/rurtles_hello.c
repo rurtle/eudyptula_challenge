@@ -1,5 +1,5 @@
 /*
- * @brief	lkml_example simple kernel module
+ * @brief	Task 01 - Write a Linux kernel module
  */
 #include <linux/init.h>
 #include <linux/module.h>				/* Needed by all modules */
