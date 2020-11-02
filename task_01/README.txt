@@ -20,5 +20,5 @@ responding to this task, so that I can figure out who to attribute it
 to.  You can just respond to the task with the answers and all should be
 fine.
 
-If you forgot, your id is "ce4559355f1e".  But of course you have not
+If you forgot, your id is "xxxxxxxxxxxx".  But of course you have not
 forgotten that yet, you are better than that.
