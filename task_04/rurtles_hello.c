@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: GPL-3.0+
+//
+// Author: Subhra Sankha Sarkar <rurtle.coder@gmail.com>
+
 /*
  * @brief	Task 01 - Write a Linux kernel module
  */
