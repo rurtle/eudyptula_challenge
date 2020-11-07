@@ -16,13 +16,13 @@ MODULE_VERSION("0.01");
 
 static int __init lkml_example_start(void)
 {
-	printk(KERN_ALERT "Hello World!\n");
+	pr_alert("Hello World!\n");
 	return 0;
 }
 
 static void __exit lkml_example_end(void)
 {
-	printk(KERN_ALERT "Goodbye World.\n");
+	pr_alert("Goodbye World.\n");
 }
 
 module_init(lkml_example_start);
