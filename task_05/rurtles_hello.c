@@ -3,7 +3,7 @@
 
 /*
  * @brief	Task 05 - Write a Linux kernel module which gets loaded when a
- * 		wireless USB keyboard is plugged in
+ *              wireless USB keyboard is plugged in
  */
 #include <linux/init.h>
 #include <linux/module.h>				/* Needed by all modules */
@@ -11,6 +11,17 @@
 #include <linux/usb.h>
 #include <linux/hid.h>
 
+static int rurtles_probe(struct usb_interface *interface,
+		const struct usb_device_id *id)
+{
+	pr_alert("[rurtle] USB Keyboard plugged in\n");
+	return 0;
+}
+
+static void rurtles_disconnect(struct usb_interface *interface)
+{
+	pr_alert("[rurtle] USB Keyboard disconnected\n");
+}
 
 static const struct usb_device_id usb_kbd_id_table[] = {
 	{ USB_INTERFACE_INFO(USB_INTERFACE_CLASS_HID,
@@ -21,8 +32,10 @@ static const struct usb_device_id usb_kbd_id_table[] = {
 };
 
 static struct usb_driver rurtles_usb_driver = {
-	.name = "rurtlesusbwlkbd",
-	.id_table = usb_kbd_id_table,
+	.name           = "rurtlesusbwlkbd",
+	.probe          = rurtles_probe,
+	.disconnect     = rurtles_disconnect,
+	.id_table       = usb_kbd_id_table,
 };
 
 static int __init rurtles_start(void)
@@ -43,5 +56,5 @@ module_exit(rurtles_end);
 MODULE_DEVICE_TABLE(usb, usb_kbd_id_table);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("rurtle");
-MODULE_DESCRIPTION("Test module for checking USB wireless keyboard hotplugging");
+MODULE_DESCRIPTION("Test module for USB wireless keyboard hotplug");
 MODULE_VERSION("0.01");
