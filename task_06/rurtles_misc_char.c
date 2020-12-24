@@ -42,7 +42,7 @@ static int __init rurtles_init(void)
 		return retval;
 	}
 	/* Otherwise (misc device registered successfully) */
-	pr_debug("[rurtle] misc char driver 'eudyptula' registered!\n");
+	pr_alert("[rurtle] misc char driver 'eudyptula' registered!\n");
 	return 0;
 }
 
