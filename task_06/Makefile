@@ -1,3 +1,8 @@
+## To prevent the kernel from complaining
+## "module verification failed: signature and/or required key missing - tainting kernel"
+
+CONFIG_MODULE_SIG=n
+
 obj-m +=	rurtles_misc_char.o
 
 all:
