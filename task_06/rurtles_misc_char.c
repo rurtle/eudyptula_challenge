@@ -102,7 +102,7 @@ static int __init rurtles_init(void)
 static void __exit rurtles_exit(void)
 {
 	misc_deregister(&rurtles_misc_dev);
-	pr_info("[rurtle] Unregistered miscdevice /dev/eudyptual.");
+	pr_info("[rurtle] Unregistered miscdevice /dev/eudyptula.");
 }
 
 module_init(rurtles_init);
